@@ -6,7 +6,10 @@ let digitPatterns = [];
 let randomColors;
 
 function setup() {
-  createCanvas(800, 200);
+  
+  let canvas = createCanvas(windowWidth, windowHeight);
+  canvas.parent('sketch-holder');
+
   frameRate(1);
 
   // Inicializar digitPatterns
