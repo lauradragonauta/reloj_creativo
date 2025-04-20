@@ -169,3 +169,6 @@ function fPatterns() {
     [0,1,1,1,0],
   ];
 }
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+}
