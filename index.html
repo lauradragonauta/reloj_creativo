@@ -1,37 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Reloj generativo</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      background: clear;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-    <title>Sketch</title>
+    #p5-container {
+      width: 800px;
+      height: 200px;
+    }
 
-    <link rel="stylesheet" type="text/css" href="style.css" />
+    canvas {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div id="p5-container"></div>
 
-    <script src="libraries/p5.min.js"></script>
-    <script src="libraries/p5.sound.min.js"></script>
+  <!-- Librería p5.js -->
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
 
-    <style>
-      html, body {
-        margin: 0;
-        padding: 0;
-        height: 100%;
-        overflow: hidden;
-      }
-
-      #sketch-holder {
-        width: 100%;
-        height: 100%;
-      }
-
-      canvas {
-        display: block;
-      }
-    </style>
-  </head>
-
-  <body>
-    <div id="sketch-holder"></div>
-    <script src="sketch.js"></script>
-  </body>
+  <!-- Tu sketch -->
+  <script src="sketch.js"></script>
+</body>
 </html>

@@ -6,10 +6,8 @@ let digitPatterns = [];
 let randomColors;
 
 function setup() {
-  
-  let canvas = createCanvas(windowWidth, windowHeight);
-  canvas.parent('sketch-holder');
-
+  let canvas = createCanvas(800, 200);
+  canvas.parent('p5-container'); // por si usas div con id="p5-container"
   frameRate(1);
 
   // Inicializar digitPatterns
@@ -33,14 +31,20 @@ function setup() {
 }
 
 function draw() {
+  let escalar = window.innerWidth < 800;
+
+  if (escalar) {
+    push();
+    scale(2 / 3); // escala al 66.6%
+    translate(133, 66); // centrado visual: (800*1/6, 200*1/6)
+  }
+
   background(0);
 
   let h_dec = floor(hour() / 10);
   let h_uni = hour() % 10;
-
   let m_dec = floor(minute() / 10);
   let m_uni = minute() % 10;
-
   let s_dec = floor(second() / 10);
   let s_uni = second() % 10;
 
@@ -53,6 +57,8 @@ function draw() {
   drawNumber(m_uni, 3, staticTime, 3);
   drawNumber(s_dec, 4, secondZero, 4);
   drawNumber(s_uni, 5, secondZero, 5);
+
+  if (escalar) pop();
 }
 
 function drawNumber(number, position, isStatic, offset) {
@@ -66,11 +72,7 @@ function drawNumber(number, position, isStatic, offset) {
         let y = yStart + i * circleSize;
 
         noStroke();
-        if (isStatic) {
-          fill(255);
-        } else {
-          fill(randomColors[int(random(randomColors.length))]);
-        }
+        fill(isStatic ? 255 : randomColors[int(random(randomColors.length))]);
         ellipse(x, y, circleSize, circleSize);
       }
     }
@@ -168,7 +170,4 @@ function fPatterns() {
     [0,0,0,1,0],
     [0,1,1,1,0],
   ];
-}
-function windowResized() {
-  resizeCanvas(windowWidth, windowHeight);
 }
