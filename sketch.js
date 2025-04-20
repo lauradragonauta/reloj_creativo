@@ -36,7 +36,7 @@ function draw() {
   if (escalar) {
     push();
     scale(2 / 3); // escala al 66.6%
-    translate(133, 66); // centrado visual: (800*1/6, 200*1/6)
+    translate(173, 66); // centrado visual: (800*1/6, 200*1/6)
   }
 
   background(0);
